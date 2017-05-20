@@ -27,13 +27,11 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
-
-# Commands Used  : 
-
 ## Created This app with the below command.
 
 ng new hackernew-angular -style scss -p hn  --routing
+
+# Commands Used  : 
 
 -style = css|scss|less
 -p = prefix for the components which you will be seeing in the selectors.

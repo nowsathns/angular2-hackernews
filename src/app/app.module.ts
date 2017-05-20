@@ -10,6 +10,8 @@ import { ServicesModule } from "app/shared/services/services.module";
 /*Components*/
 import { AppComponent } from './app.component';
 import { FeedsModule } from "app/feeds/feeds.module";
+import { PipesModule } from "app/shared/pipes/pipes.module";
+import { ItemDetailsModule } from "app/item-details/item-details.module";
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { FeedsModule } from "app/feeds/feeds.module";
     CoreModule,
     AppRoutingModule,
     FeedsModule,
-    ServicesModule.forRoot()
+    ServicesModule.forRoot(),
+    ItemDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

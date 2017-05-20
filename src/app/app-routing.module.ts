@@ -1,10 +1,47 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FeedComponent } from "app/feeds/feed/feed.component";
+import { ItemDetailsComponent } from "app/item-details/item-details/item-details.component";
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
+    path : '',
+    redirectTo:'news/1',
+    pathMatch : 'full'
+  },
+  {
+    path: 'news/:page',
+    component: FeedComponent,
+    data : { feedType : 'news' }
+  },
+  {
+    path: 'newest/:page',
+    component: FeedComponent,
+    data : { feedType : 'newest' }
+  },
+  {
+    path: 'show/:page',
+    component: FeedComponent,
+    data : { feedType : 'show' }
+  },
+  {
+    path: 'ask/:page',
+    component: FeedComponent,
+    data : { feedType : 'ask' }
+  },
+  {
+    path: 'jobs/:page',
+    component: FeedComponent,
+    data : { feedType : 'jobs' }
+  },
+  {
+    path: 'item/:id',
+    component: ItemDetailsComponent,
+    data : { feedType : 'jobs' }
+  },
+  {
+    path : '**',
+    redirectTo:'news/1'
   }
 ];
 
