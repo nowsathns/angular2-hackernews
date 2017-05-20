@@ -5,9 +5,12 @@ import { NgModule } from '@angular/core';
 /*My Modules*/
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from "app/core/core.module";
+import { ServicesModule } from "app/shared/services/services.module";
 
 /*Components*/
 import { AppComponent } from './app.component';
+import { FeedsModule } from "app/feeds/feeds.module";
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FeedsModule,
+    ServicesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

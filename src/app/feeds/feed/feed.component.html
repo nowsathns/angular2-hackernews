@@ -1,0 +1,12 @@
+<main>
+  <ol>
+    <li class="post" *ngFor="let item of items; let i= index">
+      <!--item is the property bindings.  -->
+       <hn-item class="item-block" [item]= "item"></hn-item>
+    </li>
+  </ol>
+  <div class="nav"> 
+    <a href="" class="prev"><Prev</a>
+    <a href="" class="more">More ></a>
+  </div>
+</main>
