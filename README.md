@@ -29,4 +29,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-Created a Core Module -- ng g m CoreModule
+Commands Used  : 
+
+Created This app with the below command.
+
+ng new hackernew-angular -style scss -p hn  --routing
+
+-style = css|scss|less
+-p = prefix for the components which you will be seeing in the selectors.
+
+Creating a Module  - ng g m ModuleName
+
+Creating a Component - ng g c ComponentName
+
+Creating a Service - ng g s ServiceName
+
