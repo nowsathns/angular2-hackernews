@@ -1,16 +1,21 @@
 <main>
-
-  <ol start="{{ listStart }}">
-    <li class="post" *ngFor="let item of items; let i= index">
-      <!--item is the property bindings.  -->
-       <hn-item class="item-block" [item]= "item"></hn-item>
-    </li>
-  </ol>
-  <div class="nav"> 
-    <a *ngIf ="listStart!==1" class="prev" [routerLink]="['/', feedType, pageNo - 1]"><Prev</a>
-    <a  class="prev" [routerLink]="['/', feedType, pageNo + 1]" class="more">More ></a>
+   <div *ngIf="items; else loading">
+    <ol start="{{ listStart }}">
+      <li class="post" *ngFor="let item of items; let i= index">
+        <!--item is the property bindings.  -->
+          <hn-item class="item-block" [item]= "item"></hn-item>
+      </li>
+    </ol>
+    <div class="nav"> 
+      <a *ngIf ="listStart!==1" class="prev" [routerLink]="['/', feedType, pageNo - 1]"><Prev</a>
+      <a  *ngIf ="items.length === 30" class="prev" [routerLink]="['/', feedType, pageNo + 1]" class="more">More ></a>
+    </div>
   </div>
   <ng-template #loading>
+     <div class="loading-section">
+      <div class="loader">
+        Loading...
+      </div>
+    </div>
   </ng-template>
-
 </main>
