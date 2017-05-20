@@ -8,7 +8,7 @@ export class HackernewsApiService {
   baseURL : string;
 
   constructor(private _http:Http) { 
-    this.baseURL = 'https://node--hnapi.herokuapp.com';
+    this.baseURL = 'https://node-hnapi.herokuapp.com';
   }
   
   fetchFeeds(feedType:string,page:number)  : Observable<any> {
