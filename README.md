@@ -29,9 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 
-Commands Used  : 
+##Commands Used  : 
 
-Created This app with the below command.
+#Created This app with the below command.
 
 ng new hackernew-angular -style scss -p hn  --routing
 
