@@ -42,3 +42,7 @@ Creating a Component - ng g c ComponentName
 
 Creating a Service - ng g s ServiceName
 
+
+
+This application is created from the tutorial of the [houssein.me] (https://houssein.me/angular2-hacker-news) blog
+

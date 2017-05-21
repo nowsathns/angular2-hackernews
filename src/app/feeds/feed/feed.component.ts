@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute } from '@angular/router';
 import { HackernewsApiService } from '../../shared/services/services.module'
-import { NewsItem } from "../../shared/models/news-item";
-import 'rxjs/add/operator/switchmap'
+import { NewsItem } from '../../shared/models/news-item';
+import 'rxjs/add/operator/switchmap';
 
 @Component({
   selector: 'hn-feed',
@@ -11,26 +11,26 @@ import 'rxjs/add/operator/switchmap'
 })
 export class FeedComponent implements OnInit {
 
-  items : NewsItem[];
-  feedType : string;
-  pageNo : number;
-  listStart : number = 1;
+  items: NewsItem[];
+  feedType: string;
+  pageNo: number;
+  listStart: number;
 
-  constructor(private _hnApi : HackernewsApiService,
-              private _route : ActivatedRoute) { 
+  constructor(private _hnApi: HackernewsApiService,
+              private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this._route.data.subscribe((data :any) => this.feedType = data.feedType ,error => console.log(error))
-    this._route.params.switchMap((params :any)=> { 
+    this._route.data.subscribe((data: any) => this.feedType = data.feedType ,error => console.log(error))
+    this._route.params.switchMap((params: any) => {
                                   console.log(this.feedType);
-                                  this.pageNo = + params.page || 1; 
+                                  this.pageNo = + params.page || 1;
                                   return this._hnApi.fetchFeeds(this.feedType,this.pageNo);
-                                }).subscribe((items:NewsItem[]) => {  
-                                      this.items = items 
-                                      this.listStart = (this.pageNo  == 1) ? 1 : ((this.pageNo - 1) * 30);
-                                      setTimeout(()=> window.scrollTo(0,0));
-                                  }, error=> console.log(`Some error had occured ${error}`));
+                                }).subscribe((items: NewsItem[]) => {
+                                      this.items = items;
+                                      this.listStart = (this.pageNo === 1) ? 1 : ((this.pageNo - 1) * 30);
+                                      setTimeout(()=> window.scrollTo(0, 0));
+                                  }, error => console.log(`Some error had occured ${error}`));
   }
 
 }

@@ -8,7 +8,7 @@
     </ol>
     <div class="nav"> 
       <a *ngIf ="listStart!==1" class="prev" [routerLink]="['/', feedType, pageNo - 1]"><Prev</a>
-      <a  *ngIf ="items.length === 30" class="prev" [routerLink]="['/', feedType, pageNo + 1]" class="more">More ></a>
+      <a *ngIf ="items.length === 30" class="prev" [routerLink]="['/', feedType, pageNo + 1]" class="more">More ></a>
     </div>
   </div>
   <ng-template #loading>

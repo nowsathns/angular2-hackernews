@@ -6,7 +6,7 @@ import { ItemDetailsComponent } from "app/item-details/item-details/item-details
 const routes: Routes = [
   {
     path : '',
-    redirectTo:'news/1',
+    redirectTo: 'news/1',
     pathMatch : 'full'
   },
   {
@@ -41,7 +41,7 @@ const routes: Routes = [
   },
   {
     path : '**',
-    redirectTo:'news/1'
+    redirectTo: 'news/1'
   }
 ];
 
